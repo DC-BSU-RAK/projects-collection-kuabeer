@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/instructionScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Instruction">
+
+    <!-- Background image for instruction popup dialog -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="395dp"
+        android:layout_height="520dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mood_lab_instruction" />
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView">
+
+        <TextView
+            android:text="USER MANUAL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bagel_fat_one"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:fontFamily="@font/bagel_fat_one"
+            android:text="Welcome to the Mood Lab. This diagnostic tool helps you track the 8 core pillars of daily mental well-being."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:textColor="#FFFEFE" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/bagel_fat_one"
+            android:text="1) Select YES or NO to answer all 8 questions honestly."
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/bagel_fat_one"
+            android:text="2) Tap the ANALYZE DATA button to process your inputs."
+            android:textColor="#FBFBFB"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/bagel_fat_one"
+            android:text="3) Review Your Status: A popup will show if you need to recharge."
+            android:textColor="#FDF8F8"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Button to close the instruction popup and return to the main screen-->
+        <Button
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="CLOSE"
+            android:textSize="25sp"
+            android:fontFamily="@font/bagel_fat_one" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

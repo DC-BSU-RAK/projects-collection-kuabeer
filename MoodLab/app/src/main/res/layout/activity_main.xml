@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#040404"
+    tools:context=".MainActivity">
+
+    <!-- header using imageview to design the app -->
+    <ImageView
+        android:id="@+id/headerImageview"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:contentDescription="header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mood_lab_header" />
+
+    <!-- info icon button using image button-->
+    <ImageButton
+        android:id="@+id/info_icon_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="18dp"
+        android:backgroundTint="#000000"
+        android:contentDescription="Show Instructions"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/bagel_fat_one"
+        android:gravity="center"
+        android:text="How are you feeling?"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerImageview" />
+
+    <!-- divider using imageview -->
+    <ImageView
+        android:id="@+id/dividerImageview"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="divider"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:srcCompat="@drawable/mood_lab_divider" />
+
+    <!-- user can scroll up or down to see all questions -->
+    <ScrollView
+        android:id="@+id/questionsScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/analyzeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dividerImageview">
+
+        <!-- questions and radio buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/questionTextview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="1) Did you get more than 7 hours of rest?"
+                android:textAlignment="textStart"
+                android:textColor="#368AD4"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="#7A368AD4"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/yesButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="YES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/noButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="NO"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/questionTextview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="2) Have you had at least 3 glasses of water today?"
+                android:textColor="#F5C547"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="#B6F5C547"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/yesButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="YES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/noButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="NO"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/questionTextview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="3) Did you eat a proper meal in the last 5 hours?"
+                android:textAlignment="textStart"
+                android:textColor="#894FF9"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="#88894FF9"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/yesButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="YES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/noButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="NO"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/questionTextview4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="4) Have you been physically active or stepped outside?"
+                android:textAlignment="textStart"
+                android:textColor="#008E63"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="#B2008E63"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/yesButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="YES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/noButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="NO"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/questionTextview5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="5) Have you talked to a friend or family member today?"
+                android:textAlignment="textStart"
+                android:textColor="#FD4D8C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="#C4FD4D8C"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/yesButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="YES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/noButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="NO"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/questionTextview6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="6) Have you taken a break from your phone/laptop?"
+                android:textAlignment="textStart"
+                android:textColor="#368AD4"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="#7A368AD4"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/yesButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="YES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/noButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="NO"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/questionTextview7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="7) Have you had a moment of quiet or meditation?"
+                android:textAlignment="textStart"
+                android:textColor="#F5C547"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="#B6F5C547"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/yesButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="YES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/noButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="NO"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/questionTextview8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="8) Did you complete at least one task on your list?"
+                android:textAlignment="textStart"
+                android:textColor="#894FF9"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="#88894FF9"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/yesButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="YES"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/noButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/bagel_fat_one"
+                    android:text="NO"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- to show result -->
+    <Button
+        android:id="@+id/analyzeButton"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/bagel_fat_one"
+        android:text="ANALYZE"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="35dp"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/clearButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- to reset all radio button so user can start again-->
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/bagel_fat_one"
+        android:text="CLEAR"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="35dp"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/analyzeButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
