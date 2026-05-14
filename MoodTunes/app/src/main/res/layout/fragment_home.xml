@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeMainFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff9abe"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Song title -->
+        <TextView
+            android:id="@+id/songTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/langar"
+            android:text="Now Playing: Choose a Mood"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/albumCover"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- track of the progress of the music -->
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:progress="20"
+            android:progressTint="#000000"
+            android:thumbTint="#000000" />
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- show current time -->
+            <TextView
+                android:id="@+id/textCurrentTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="0:00"
+                android:textSize="18sp" />
+
+            <!-- show total time of the song -->
+            <TextView
+                android:id="@+id/textTotalTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="0:00"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/pauseButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Pause music"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_pause" />
+
+            <ImageButton
+                android:id="@+id/playButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Play music"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_play" />
+
+            <ImageButton
+                android:id="@+id/stopButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Stop music"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_stop" />
+        </LinearLayout>
+
+        <!-- Mood Buttons -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/moodHappy"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:backgroundTint="#cb6187"
+                android:fontFamily="@font/langar"
+                android:padding="15dp"
+                android:text="Sunny Vibes"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/moodChill"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:backgroundTint="#cb6187"
+                android:fontFamily="@font/langar"
+                android:padding="15dp"
+                android:text="Dreamy Flow"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/moodFun"
+                android:layout_columnWeight="1"
+                android:padding="15dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#cb6187"
+                android:fontFamily="@font/langar"
+                android:text="Party Energy"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/moodStudy"
+                android:layout_columnWeight="1"
+                android:padding="15dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#cb6187"
+                android:fontFamily="@font/langar"
+                android:text="Deep Focus"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/moodCalm"
+                android:layout_columnWeight="1"
+                android:padding="15dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#cb6187"
+                android:fontFamily="@font/langar"
+                android:text="Serene Soul"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/moodSad"
+                android:layout_columnWeight="1"
+                android:padding="15dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#cb6187"
+                android:fontFamily="@font/langar"
+                android:text="Rain Window"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </GridLayout>
+    </LinearLayout>
+</FrameLayout>
